@@ -1,6 +1,5 @@
 namespace Kafka.Consumer.Console
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
     public class After
     {
         public int id { get; set; }

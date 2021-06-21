@@ -7,7 +7,7 @@ namespace Kafka
 {
     public class CommandMessageConsumer : ConsumerBase
     {
-        public CommandMessageConsumer() : base("debezium3.dbo.jobs") { }
+        public CommandMessageConsumer() : base("debezium.dbo.jobs") { }
  
         public override void OnMessageDelivered(string message)
         {

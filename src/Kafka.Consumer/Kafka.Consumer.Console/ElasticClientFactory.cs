@@ -12,7 +12,7 @@ namespace Kafka.Consumer.Console
             get
             {
                 return _elasticClient ??=
-                    new ElasticClient(new ConnectionSettings(new Uri("http://192.168.24.78:9200/")));
+                    new ElasticClient(new ConnectionSettings(new Uri("http://localhost:9200/")));
             }
         }
     }
