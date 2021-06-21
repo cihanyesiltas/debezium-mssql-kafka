@@ -1,0 +1,25 @@
+{
+    "name": "debezium-sqlserver-connector",
+    "config": {
+        "connector.class" : "io.debezium.connector.sqlserver.SqlServerConnector",
+        "tasks.max" : "1",
+        "database.server.name" : "debezium",
+        "database.hostname" : "sqlserver",
+        "database.port" : "1433",
+        "database.user" : "sa",
+        "database.password" : "Password!",
+        "database.dbname" : "testDB",
+        "database.history.kafka.bootstrap.servers" : "kafka:29092",
+        "database.history.kafka.topic": "testDB.changes",
+        "heartbeat.interval.ms": "5000",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "table.include.list":"dbo.jobs",
+        "column.blacklist": "dbo.jobs.taxNumber",
+        "snapshot.select.statement.overrides":"dbo.jobs",
+        "snapshot.select.statement.overrides.dbo.jobs":"SELECT * FROM dbo.jobs WHERE id>103",
+        "tombstones.on.delete": false
+    }
+}
